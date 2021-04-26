@@ -4,7 +4,7 @@ const SSEManager = require("../LiveModel/ssemanager");
 const sseManager = new SSEManager();
 
 const entry = async (req, res, next) => {
-  console.log("Dans entry avec id ", req.params.uid);
+  console.log("Dans entry avec id", req.params.uid);
   const id = req.params.uid;
 
   if (sseManager.clients.has(id)) {
