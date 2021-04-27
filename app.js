@@ -1,10 +1,12 @@
 const express = require("express");
-const SSEManager = require("./LiveModel/ssemanager");
+const bodyParser = require("body-parser");
+
 const HttpError = require("./model/http-err");
 
 const liveRoutes = require("./Routes/LiveRoutes");
 
 const app = express();
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
